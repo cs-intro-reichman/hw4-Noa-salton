@@ -164,32 +164,25 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        // Check for null input
         if (str1 == null || str2 == null) {
-            return -2; // Return -2 for invalid input
+            return -2; 
         }
-        
-        // Compare characters one by one
+    
         for (int i = 0; i < Math.min(str1.length(), str2.length()); i++) {
             char c1 = str1.charAt(i);
             char c2 = str2.charAt(i);
             
             if (c1 < c2) {
-                return -1; // str1 is lexicographically smaller
+                return -1; 
             } else if (c1 > c2) {
-                return 1; // str1 is lexicographically larger
+                return 1; 
             }
         }
-    
-        // If all characters match, compare by length
         if (str1.length() < str2.length()) {
-            return -1; // str1 is shorter, so it's lexicographically smaller
+            return -1;
         } else if (str1.length() > str2.length()) {
-            return 1; // str1 is longer, so it's lexicographically larger
+            return 1;
         }
-    
-        // If both strings are identical
-        return 0; // They are equal
+        return 0; 
     }
-    
 }
